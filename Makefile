@@ -3,14 +3,14 @@
 ################################################################################
 
 # Executable name
-EXEC = program
+EXEC = untitled_quest_game
 
 # Build, bin, assets, and install directories (bin and build root directories are kept for clean)
 BUILD_DIR_ROOT = build
 BIN_DIR_ROOT = bin
 ASSETS_DIR = assets
 ASSETS_OS_DIR := $(ASSETS_DIR)_os
-INSTALL_DIR := ~/Desktop/$(EXEC)
+INSTALL_DIR := ~/bin/$(EXEC)
 
 # Sources (searches recursively inside the source directory)
 SRC_DIR = src
@@ -29,10 +29,10 @@ CXXFLAGS = -std=c++17
 WARNINGS = -Wall -Wpedantic -Wextra
 
 # Linker flags
-LDFLAGS =
+LDFLAGS = 
 
 # Libraries to link
-LDLIBS =
+LDLIBS = -llog4cpp
 
 # Target OS detection
 ifeq ($(OS),Windows_NT) # OS is a preexisting environment variable on Windows

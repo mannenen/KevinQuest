@@ -8,25 +8,24 @@
 #include <log4cpp/BasicLayout.hh>
 #include <log4cpp/FileAppender.hh>
 
-#include "logger.h"
+#include "logging/logger.h"
 
 namespace KevinQuest::Logging {
-    class FileLogger: protected Logger {
+    class FileLogger: public Logger {
         public:
             FileLogger(
-                std::string &name,
+                const std::string &name,
                 const std::string &filename,
                 log4cpp::Layout *layout = new log4cpp::BasicLayout()
             );
             ~FileLogger() {}
 
-            void debug(const std::string &msg) const;
-            void info(const std::string &msg) const;
-            void error(const std::string &msg) const;
+            void debug(const std::string &msg);
+            void info(const std::string &msg);
+            void error(const std::string &msg);
 
         private:
-            log4cpp::Category m_logger;
-            void log(const std::string &tag, const std::string &msg) const;
+            log4cpp::Category &m_logger;
     };
 }
 
