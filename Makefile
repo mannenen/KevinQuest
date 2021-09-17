@@ -18,7 +18,7 @@ SRCS := $(sort $(shell find $(SRC_DIR) -name '*.cpp'))
 
 # Includes
 INCLUDE_DIR = include
-INCLUDES := -I$(INCLUDE_DIR)
+INCLUDES := -I$(INCLUDE_DIR) -I/usr/include/guid.h
 
 # C preprocessor settings
 CPPFLAGS = $(INCLUDES) -MMD -MP
@@ -32,7 +32,7 @@ WARNINGS = -Wall -Wpedantic -Wextra
 LDFLAGS = 
 
 # Libraries to link
-LDLIBS = -llog4cpp
+LDLIBS = -llog4cpp -lcrossguid
 
 # Target OS detection
 ifeq ($(OS),Windows_NT) # OS is a preexisting environment variable on Windows
