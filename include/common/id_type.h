@@ -5,13 +5,14 @@
 
 #include <guid.h>
 
+
 namespace KevinQuest::Common {
     class IdType {
         public:
         IdType(const std::string &);
-
         
-        
+        private:
+        const Guid *xg;
     };
 }
 

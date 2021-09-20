@@ -7,7 +7,7 @@ namespace KevinQuest::Common {
     class IdGenerator {
         public:
         static const IdType &GenerateNew();
-    }
+    };
 }
 
 #endif

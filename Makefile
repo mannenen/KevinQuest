@@ -18,14 +18,14 @@ SRCS := $(sort $(shell find $(SRC_DIR) -name '*.cpp'))
 
 # Includes
 INCLUDE_DIR = include
-INCLUDES := -I$(INCLUDE_DIR) -I/usr/include/guid.h
+INCLUDES := -I$(INCLUDE_DIR)
 
 # C preprocessor settings
 CPPFLAGS = $(INCLUDES) -MMD -MP
 
 # C++ compiler settings
 CXX = g++
-CXXFLAGS = -std=c++17
+CXXFLAGS = -std=c++17 -g
 WARNINGS = -Wall -Wpedantic -Wextra
 
 # Linker flags
