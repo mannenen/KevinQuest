@@ -18,7 +18,7 @@ SRCS := $(sort $(shell find $(SRC_DIR) -name '*.cpp'))
 
 # Includes
 INCLUDE_DIR = include
-INCLUDES := -I$(INCLUDE_DIR)
+INCLUDES := -I$(INCLUDE_DIR) -I/usr/include -I/usr/local/include
 
 # C preprocessor settings
 CPPFLAGS = $(INCLUDES) -MMD -MP
@@ -29,10 +29,10 @@ CXXFLAGS = -std=c++17 -g
 WARNINGS = -Wall -Wpedantic -Wextra
 
 # Linker flags
-LDFLAGS = 
+LDFLAGS = -L/usr/local/lib
 
 # Libraries to link
-LDLIBS = -llog4cpp -lcrossguid
+LDLIBS = -llog4cpp -lcrossguid -luuid
 
 # Target OS detection
 ifeq ($(OS),Windows_NT) # OS is a preexisting environment variable on Windows
