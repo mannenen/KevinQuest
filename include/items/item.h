@@ -4,9 +4,11 @@
 #include <iostream>
 
 #include "common/id_type.h"
+#include "event/emitter.h"
+#include "event/event.h"
 
 namespace KevinQuest::Items {
-    class Item {
+    class Item: public KevinQuest::Event::EventEmitter {
         public:
         Item(): 
             _id(KevinQuest::IdType()) {};
